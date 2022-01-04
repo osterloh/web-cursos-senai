@@ -9,7 +9,7 @@ export const Container = styled.div`
     border-bottom: 1px solid #006bb7;
   }
   #main {
-    width: 90%;
+    min-width: 95%;
     margin: 10px auto 10px auto;
 
     display: flex;
