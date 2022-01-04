@@ -44,6 +44,10 @@ export const Container = styled.div`
           line-height: 1.5;
 
           width: 100%;
+
+          &:hover {
+            text-decoration: underline;
+          }
         }
 
         div {
@@ -120,6 +124,7 @@ export const Container = styled.div`
 
       a {
         text-decoration: none;
+        font-size: 1.15em;
         margin: 0.5em;
 
         svg {
@@ -129,6 +134,7 @@ export const Container = styled.div`
           border: solid 2px #fff;
           border-radius: 50%;
           text-align: center;
+          font-size: 1.15em;
 
           transition: all 0.3s ease;
 
