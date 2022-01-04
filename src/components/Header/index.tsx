@@ -61,7 +61,7 @@ const Header: React.FC = () => {
             </div>
             <div id="internos">
               <a href="https://sc.senai.br/compliance">Compliance</a>
-              <a href="#">Transparência</a>
+              <a href="https://transparencia.sc.senai.br/">Transparência</a>
               <a href="https://intranet.sesisc.org.br/intranet/php/login.php?">
                 Intranet
               </a>
