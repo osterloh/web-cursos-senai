@@ -102,7 +102,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
         <div id="midiasSociais">
-          <a href="#">
+          <a href="https://sc.senai.br/">
             <img src={logoSenai} alt="SENAI" />
           </a>
           <div>
