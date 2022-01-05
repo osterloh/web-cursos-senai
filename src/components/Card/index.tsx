@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { Container } from "./styles";
 
@@ -21,7 +22,7 @@ const Card: React.FC = () => {
           <h1>12 vagas</h1>
         </div>
         <p>Reservas disponíveis até dia 10/03/2021</p>
-        <a href="#">Reservar</a>
+        <Link to="/appointment">Reservar</Link>
       </Container>
     </>
   );
