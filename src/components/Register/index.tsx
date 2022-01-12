@@ -5,7 +5,7 @@ import api from "../../service/api";
 
 import { Container } from "./styles";
 
-interface CursoFormData extends InputHTMLAttributes<HTMLInputElement> {
+interface ICursoFormData extends InputHTMLAttributes<HTMLInputElement> {
   curso: string;
   totalDeVagas: number;
   vagasDisponiveisAte: string;
@@ -19,7 +19,7 @@ const Register: React.FC = () => {
   const history = useHistory();
 
   const cadastrar = useCallback(
-    async (data: CursoFormData) => {
+    async (data: ICursoFormData) => {
       try {
         const curso = {
           curso: newCurso,
@@ -27,7 +27,6 @@ const Register: React.FC = () => {
           vagasDisponiveisAte: newPrazo,
         };
 
-        console.log(curso);
         await api.post("/curso", curso);
         history.push("/");
       } catch (err) {

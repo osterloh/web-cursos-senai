@@ -16,6 +16,7 @@ export const Container = styled.div`
         color: #5b5b5b;
         font-weight: bold;
         font-size: 15px;
+        display: block;
       }
 
       input {
