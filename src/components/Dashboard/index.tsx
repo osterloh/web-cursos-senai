@@ -25,8 +25,6 @@ const Dashboard: React.FC = () => {
     });
   }, []);
 
-  console.log(cursos);
-
   return (
     <>
       <Header />
