@@ -30,11 +30,17 @@ const Update: React.FC = () => {
   }, []);
 
   const buscarCurso = async () => {
+    if (isNaN(parseInt(idCurso))) {
+      setNewVagas(0);
+      setNewVagasDisponiveis(0);
+      setNewPrazo("");
+      return;
+    }
     await api.get(`/curso/${idCurso}`).then((response) => {
       setOldCurso(response.data);
       setNewVagas(response.data.totalDeVagas);
       setNewVagasDisponiveis(response.data.vagasDisponiveis);
-      setNewPrazo(response.data.vagasDisponiveisAte);
+      setNewPrazo(response.data.vagasDisponiveisAte.substring(0, 10));
     });
   };
 
@@ -45,8 +51,6 @@ const Update: React.FC = () => {
         vagasDisponiveis: newVagasDisponiveis,
         vagasDisponiveisAte: newPrazo?.substring(0, 10),
       };
-      console.log(newPrazo?.substring(0, 10));
-      console.log(cursoUpdate);
       await api.put(`/curso/${idCurso}`, cursoUpdate);
     } catch (err) {
       console.log(err);
@@ -67,6 +71,7 @@ const Update: React.FC = () => {
               onClick={() => buscarCurso()}
               onChange={(e) => setIdCurso(e.currentTarget.value)}
             >
+              <option>Selecione o curso</option>
               {cursos.map((curso) => (
                 <option key={curso.id} value={curso.id}>
                   {curso.curso}
@@ -91,7 +96,7 @@ const Update: React.FC = () => {
             />
             <label>Reservas disponíveis até dia:</label>
             <input
-              type="text"
+              type="date"
               name="vagasDisponiveisAte"
               placeholder="Prazo para reserva"
               value={newPrazo}
